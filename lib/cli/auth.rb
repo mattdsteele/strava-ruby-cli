@@ -62,12 +62,11 @@ module Strava
           scope: @scope
         )
 
-        server.start
-
         Launchy.open redirect_url do |err|
-          server.shutdown
           raise "Failed to open browser to request Strava authentication. Cause: #{err}"
         end
+
+        server.start
 
         @access_token
       end
