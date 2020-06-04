@@ -63,7 +63,7 @@ module Strava
         )
 
         Launchy.open redirect_url do |err|
-          raise "Failed to open browser to request Strava authentication. Cause: #{err}"
+          raise "Failed to browse to #{redirect_url}: #{err}"
         end
 
         server.start
